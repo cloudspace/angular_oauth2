@@ -35,8 +35,9 @@ oauth2.provider('OAuth2Api', function OAuthApiProvider($httpProvider) {
         return service;
     }
 
-    $httpProvider.interceptors.push(function($cookie) {
-        service.accessToken = $cookie.accessToken;
+    $httpProvider.interceptors.push(function ($cookieStore) {
+        service.accessToken = $cookieStore.get('accessToken');
+        service.refreshToken = $cookieStore.get('refreshToken');
         return {
             request: function(config) {
                 // If this is a request to the API,
