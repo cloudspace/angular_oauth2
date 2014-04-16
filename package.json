@@ -1,0 +1,35 @@
+{
+    "name": "AngularOAuth2",
+    "version": "0.0.1",
+    "description": "A small AngularJS Service to turn cookie-stored OAuth2 access_token into a Auth: Bearer token.",
+    "main": "lib/oauth2.js",
+    "scripts": {
+        "test": "grunt test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cloudspace/angular_oauth2.git"
+    },
+    "keywords": [
+        "Angular",
+        "AngularJS",
+        "OAuth"
+    ],
+    "author": "Justin Ridgewell",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/cloudspace/angular_oauth2/issues"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-ngmin": "~0.0.2",
+        "grunt-plato": "~0.2.1",
+        "grunt-preprocess": "~2.3.0",
+        "grunt-contrib-jshint": "~0.6.2",
+        "grunt-contrib-uglify": "~0.2.2",
+        "grunt-karma": "~0.6.2",
+        "load-grunt-tasks": "~0.2.0",
+        "time-grunt": "~0.2.1"
+    }
+}
