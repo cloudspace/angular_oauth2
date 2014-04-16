@@ -1,7 +1,9 @@
-oauth2.provider('OAuthApi', function OAuthApiProvider($httpProvider) {
+oauth2.provider('OAuth2Api', function OAuthApiProvider($httpProvider) {
 
     var domain = '';
-    var accessToken;
+    var service = {
+        accessToken: null
+    };
 
     function hasProtocol(url) {
         return url.indexOf('http') === 0;
@@ -29,14 +31,19 @@ oauth2.provider('OAuthApi', function OAuthApiProvider($httpProvider) {
         return domain;
     };
 
-    $httpProvider.interceptors.push(function() {
+    this.$get = function() {
+        return service;
+    }
+
+    $httpProvider.interceptors.push(function($cookie) {
+        service.accessToken = $cookie.accessToken;
         return {
             request: function(config) {
                 // If this is a request to the API,
                 // add our Auth Bearer header
-                if (domainRegex().test(config.url) && accessToken) {
+                if (domainRegex().test(config.url) && service.accessToken) {
                     var headers = config.headers || (config.headers = {});
-                    headers.Authorization = 'Bearer ' + accessToken;
+                    headers.Authorization = 'Bearer ' + service.accessToken;
                 }
                 return config;
             }
