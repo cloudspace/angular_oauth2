@@ -1,6 +1,6 @@
 {
     "name": "AngularOAuth2",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A small AngularJS Service to turn cookie-stored OAuth2 access_token into a Auth: Bearer token.",
     "main": "lib/oauth2.js",
     "scripts": {
