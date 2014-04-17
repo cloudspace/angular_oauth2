@@ -10,6 +10,7 @@ module.exports = function(config) {
         files: [
             'test/support/angular/angular.js',
             'test/support/angular-mocks/angular-mocks.js',
+            'test/support/angular-cookies/angular-cookies.js',
             'test/oauth2.js',
             'src/*.js',
             'test/mock/**/*.js',
